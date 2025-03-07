@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity Web Player | Panafutbol</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white; /* Optional: change background */
+        }
+
+        #unity-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #unity-canvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100vw;
+            max-height: 100vh;
+            width: auto;
+            height: auto;
+            aspect-ratio: 1080 / 1920;
+            background: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+<div id="unity-container">
+    <canvas id="unity-canvas" width="1080" height="1920" tabindex="-1"></canvas>
+</div>
+<script src="Build/Panafutbol.loader.js"></script>
+<script>
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+
+    createUnityInstance(document.querySelector("#unity-canvas"), {
+        arguments: [],
+        dataUrl: "Build/Panafutbol.data.unityweb",
+        frameworkUrl: "Build/Panafutbol.framework.js.unityweb",
+        codeUrl: "Build/Panafutbol.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Panafoto",
+        productName: "Panafutbol",
+        productVersion: "2.1.0"
+    });
+</script>
+</body>
+</html>
