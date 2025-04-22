@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | Panafutbol</title>
+    <title>Unity Web Player | poly-futbol-webgl</title>
     <style>
         html, body {
             margin: 0;
@@ -41,7 +41,7 @@
 <div id="unity-container">
     <canvas id="unity-canvas" width="1080" height="1920" tabindex="-1"></canvas>
 </div>
-<script src="Build/Panafutbol.loader.js"></script>
+<script src="Build/poly-futbol-webgl.loader.js"></script>
 <script>
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         var meta = document.createElement('meta');
@@ -52,13 +52,13 @@
 
     createUnityInstance(document.querySelector("#unity-canvas"), {
         arguments: [],
-        dataUrl: "Build/Panafutbol.data.unityweb",
-        frameworkUrl: "Build/Panafutbol.framework.js.unityweb",
-        codeUrl: "Build/Panafutbol.wasm.unityweb",
+        dataUrl: "Build/poly-futbol-webgl.data.unityweb",
+        frameworkUrl: "Build/poly-futbol-webgl.framework.js.unityweb",
+        codeUrl: "Build/poly-futbol-webgl.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Panafoto",
-        productName: "Panafutbol",
-        productVersion: "2.1.0"
+        productName: "poly-futbol-webgl",
+        productVersion: "2.3.0"
     });
 </script>
 </body>
